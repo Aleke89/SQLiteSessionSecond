@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectedListingActivity">
+
+    <RelativeLayout
+        android:id="@+id/title_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Property Name 1 Prices"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/title_relative" />
+
+    <TextView
+        android:id="@+id/just_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyler_view"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="From:"
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/edt_from"
+        android:layout_marginTop="17dp"
+        android:textSize="18dp"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/just_from"
+        android:layout_marginStart="10dp"
+        android:hint="yyyy/mm/dd" />
+
+    <ImageView
+        android:id="@+id/img_date_picker1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/just_from"
+        android:layout_toRightOf="@id/edt_from"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/just_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyler_view"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/img_date_picker1"
+        android:text="To:"
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/edt_to"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/just_to"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toRightOf="@id/img_date_picker1"
+        android:hint="yyyy/mm/dd" />
+
+    <ImageView
+        android:id="@+id/img_date_picker2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/just_from"
+        android:layout_toRightOf="@id/edt_to"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/txt_on_the_weekend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_from"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="On the weekend:"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txt_on_the_holidays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_on_the_weekend"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="On the holidays:"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txt_on_other_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_on_the_holidays"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="On other days:"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txt_on_the_weekend_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_from"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend"
+        android:text="0"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_up_weekend"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/edt_to"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend_counter"
+        android:background="@drawable/custom_back_button"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_down_weekend"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/edt_to"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/btn_up_weekend"
+        android:background="@drawable/custom_back_button"
+        android:rotation="180"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txt_on_the_holidays_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_on_the_weekend_counter"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend"
+        android:text="0"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_up_holidays"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/btn_up_weekend"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend_counter"
+        android:background="@drawable/custom_back_button"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_down_holidays"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/btn_down_weekend"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/btn_up_weekend"
+        android:background="@drawable/custom_back_button"
+        android:rotation="180"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txt_on_the_other_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_on_the_holidays_counter"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend"
+        android:text="0"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_up_other"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/btn_up_holidays"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/txt_on_the_weekend_counter"
+        android:background="@drawable/custom_back_button"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/btn_down_other"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/btn_down_holidays"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/btn_up_weekend"
+        android:background="@drawable/custom_back_button"
+        android:rotation="180"
+        android:text="/\\"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_from"
+        android:layout_marginStart="15dp"
+        android:layout_toRightOf="@id/btn_down_weekend"
+        android:hint="Select the rule">
+
+        <AutoCompleteTextView
+            android:id="@+id/drp_weekend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_down_weekend"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/btn_down_weekend"
+        android:hint="Select the rule">
+
+        <AutoCompleteTextView
+            android:id="@+id/drp_holidays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_down_other"
+        android:layout_marginStart="15dp"
+        android:layout_toRightOf="@id/btn_down_weekend"
+        android:hint="Select the rule">
+
+        <AutoCompleteTextView
+            android:id="@+id/drp_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_setPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_down_other"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/white"
+        android:text="Set price"
+        android:textColor="@color/black" />
+</RelativeLayout>
